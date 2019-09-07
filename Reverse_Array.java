@@ -1,53 +1,69 @@
-package class31Aug_1Sep_2019;
+package Classes_7sep_8sep_2019;
 
 import java.util.*;
 
+
 public class Reverse_Array {
 
+	
 	static Scanner sc = new Scanner(System.in);
-
-	public static void Reverse(int[] a, int n) {
-
-		int i = 0, j = n - 1;
-
-		int[] b = new int[n];
+	
+	
+	public static void Reverse(int n ,int[] a) {
+		
+		
+		int i,temp;
 		
 		for(i=0;i<n;i++) {
 			
-			b[j] = a[i];
-			j--;
+			temp = a[i];
+			
+			a[i] = a[n-i-1];
+			
+			a[n-i-1] = temp;
+			
 		}
 		
-		System.out.println("The reversed array elements are as follows:");
+	System.out.println("The reversed array elements are:");	
 
-		for (i = 0; i < n; i++) {
-
-			System.out.println(b[i]);
-
+		for(i=0;i<n;i++) {
+			
+			System.out.println(a[i]);
+			
 		}
-	}
-
-	public static void main(String[] args) {
-
-		int n, i;
-
-		System.out.println("Enter the number of array elements:");
-
-		n = sc.nextInt();
-
-		System.out.println("Enter the array elements:");
-
-		int[] a = new int[n];
-
-		for (i = 0; i < n; i++) {
-
-			a[i] = sc.nextInt();
-
-		}
-
-		Reverse(a, n);
-
-	}
-
 	
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		int n,i;
+		
+		
+		System.out.println("Enter the size of the array:");
+		
+		n = sc.nextInt();
+		
+		System.out.println("Enter the array elements:");
+		
+		int[] a = new int[n];
+		
+		
+		for(i=0;i<n;i++) {
+			
+			a[i] = sc.nextInt();
+		
+		}
+		
+		
+		Reverse(n,a);
+	
+	
+	}
+
+
+
+
 }
+
+
