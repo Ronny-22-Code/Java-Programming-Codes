@@ -8,15 +8,17 @@ public class First_Index_Rec_Array {
 
 	public static int Index(int[] a, int n, int v, int i) {
 
-		while (i < n) {
-
+		int k;
+		
 			if (i == n - 1) {
 
 				return -1;
 
 			}
 
-			else if (a[i] == v) {
+			k = Index(a, n - 1, v, i + 1); 
+			
+			if (a[i] == v) {
 
 				return i;
 
@@ -24,13 +26,13 @@ public class First_Index_Rec_Array {
 
 			else {
 
-				return (Index(a, n - 1, v, i + 1));
+				return k;
 
 			}
 
 		}
 
-	}
+	
 
 	public static void main(String[] args) {
 
@@ -54,7 +56,7 @@ public class First_Index_Rec_Array {
 
 		v = sc.nextInt();
 
-		int f = Index(a, n, v, i);
+		int f = Index(a, n, v, 0);
 
 		System.out.println(f);
 
